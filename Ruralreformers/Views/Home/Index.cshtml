@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Rural-Reformers";
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<div>
+    <div>
+        <video autoplay muted playsinline style="width:100%;" loop="loop" id="vid">
+            <source src="~/Images/ruralInfraInfo.mp4" type="video/mp4" />
+        </video>
+        <br />
+        <button type ="button" class="btn btn-info" id="unmuteToggle">Un-mute</button>
+    </div>
+
+    <div class="container">
+        <p>Our Vision</p>
+        <strong>Education for every Child in India</strong>
+        <p>Current Challenges in our Villages.</p>
+        <ul>
+            <li><strong>Accessibility to quality education:</strong> It is difficult for children with special needs to cope with regular education and tend to drop out from the mainstream education system</li>
+            <li><strong>Low Literacy Ratio:  </strong>Adult literacy in the villages is very low </li>
+            <li><strong>No access to good Healthcare:  </strong>People in the villages do not have access to good doctors/healthcare options</li>
+        </ul>
+
+        <p>
+            <strong>What we are doing?</strong>
+        </p>
+        <p>
+            We want to Change Rural India for better. We are taking small steps for that big change.
+        </p>
+        <p>
+            We would like to make <strong>small but meaningful changes</strong> in villages of Karnataka.  We want to help children with disabilities to be part of the main stream education and have employment opportunities
+        </p>
+        <p>
+            Approximately 1% of the Karnataka population consist of children with special needs. This aggregates to a whopping 5 lakh children and out of this, the survey indicates that only 1% of the children with special needs go to school and complete secondary education. Rest 99% of the children with special needs never attend school and remain illiterate thus leading to increased dependency on others for livelihood. Our aim is to ensure the remaining 99% children also get the basic training and become ready to go to a mainstream school
+        </p>
+
+        <p>School Readiness Program for Special Children</p>
+        <p>To address this problem, Fourth Wave Foundation has been working with the Karnataka government on a program named as “School Readiness Program - SRP”. This program runs from centers located in government selected locations providing –</p>
+        <ol>
+            <li><p>Physiotherapy and medical assistance to children with disabilities.</p></li>
+            <li><p>Coaching on skills needed to be self-sufficient and self-reliant for their day-to-day activities. </p></li>
+            <li><p>Training to be ready to join the regular school stream.</p></li>
+        </ol>
+        <p><strong>This program has been running for 15 years and successful in increasing the enrolment of children with special needs in schools from 1% to 21%</strong></p>
+        <p>How Rural Reformers is helping?</p>
+        <ol>
+            <li><p>Support existing SRPs in Hubli-Dharward, Karnataka which is at the verge of closure because of lack of funds</p></li>
+            <li><p>Start a pilot of two Mini-School Readiness Program Centers (Mini SRPs) in rural Karnataka which will cater to the Children with special needs who otherwise find the SRPs centers far away from their villages and cannot travel due to mobility issues.</p></li>
+        </ol>
+        <p><strong>What is Mini-SRP centers</strong></p>
+        <p>This is an innovative approach which the Rural Reformers has come out with the help of FWF.</p>
+        <p>The Mini-SRP centers will be leaner versions of SRP Centers. Each Mini-SRP will have one skilled teacher and physiotherapist to train children with special needs, along with an assistant to help the two main staff. Along with that, the centers will also have basic health infrastructure needed for providing mobility and self-sustenance skills to children with special needs.</p>
+        <p><strong>Mini-SRP centers will play three function - </strong></p>
+        <ul>
+            <li>Mini - School Readiness Programme (M-SRP) Centers - for children with special needs</li>
+            <li>Adult Literacy Programme (ALP) Centers - Adult school in the evening with innovative curricula to address the problem of low literacy ratio</li>
+            <li>Specialised Telemedicine Centers (STC) - Telemedicine centers during weekends to provide specialised healthcare support for people in villages</li>
+        </ul>
+        <p>Hence, Mini-SRPs are planned to address the 3 key challenges of our Rural India. Let’s make the difference we want to see. </p>
+    </div>
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="~/Images/image1.jpeg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="~/Images/image2.jpeg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="~/Images/image3.jpeg" alt="Third slide">
+            </div>
+        </div>
+    </div>    
+</div>
+
+<script>
+    $(document).ready(function () {
+        var video = document.getElementById('vid');
+        $("#unmuteToggle").click(function () {
+            video.muted = !video.muted;
+        });
+    })
+</script>
+
+

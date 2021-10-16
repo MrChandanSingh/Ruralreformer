@@ -1,0 +1,38 @@
+﻿@model Ruralreformers.Models.ContactUs
+
+@{
+    ViewData["Title"] = "ContactUs";
+}
+
+<h1>ContactUs</h1>
+<hr />
+<div class="container">
+    <div class="col-md-4">
+        <form asp-action="ContactUs">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ToEmail" class="control-label">Email</label>
+                <input asp-for="ToEmail" readonly class="form-control" value="Ruralreformers@gmail.com"/>
+                <span asp-validation-for="ToEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FromEmail" class="control-label">From Email</label>
+                <input asp-for="FromEmail" class="form-control" />
+                <span asp-validation-for="FromEmail" class="text-danger"></span>
+            </div>
+         
+            <div class="form-group">
+                <label asp-for="Message" class="control-label"></label>
+                <input asp-for="Message" class="form-control"/>
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="ContactUs" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
