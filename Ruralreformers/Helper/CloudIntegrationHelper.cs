@@ -57,9 +57,9 @@ namespace Ruralreformers.Helper
 
         public async Task<bool> SaveUserInformationToS3(Registeration registeration)
         {
-            string _bucketName = "ruralreformers";
-            string _awsAccessKey = "AKIAWE6Z44ADGAYE7HS5";
-            string _awsSecretKey = "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";
+            string _bucketName = "";
+            string _awsAccessKey = "";
+            string _awsSecretKey = "";
             try
             {
 
