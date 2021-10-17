@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Ruralreformers.Controllers
 {
@@ -43,11 +44,52 @@ namespace Ruralreformers.Controllers
         [Route("rural-reformers/join-as-volunteer")]
         [HttpPost]
         public IActionResult JoinAsVolunteer(Registeration registeration)
-        {
-            var cloudHelper = new CloudIntegrationHelper();
-            var result = cloudHelper.SaveUserInformationToS3(registeration);
-            ViewBag.SuccessMessage = result;
+        {           
+            ViewBag.SuccessMessage = SendMail(registeration);
             return View();
+        }
+
+        private bool SendMail(Registeration registeration)
+        {
+            try
+            {
+                var fromAddress = new MailAddress("Ruralreformers@gmail.com");
+                var toAddress = new MailAddress("Ruralreformers@gmail.com");
+                const string fromPassword = "Kindness080#";
+                const string subject = "Join As Volunteer";
+                string body = $"<body><h3>Hi Team,</h3></br></br><p>Email: {registeration.Email}</p>" +
+                    $"<p>Name: {registeration.Name}</p><p>Phone: {registeration.PhoneNumber}</p>" +
+                    $"<p>Occupation: {registeration.Occupation}</p>" +
+                    $"<p>Place: {registeration.Place}</p></br>" +
+                    $"<p>Tell me about yourself: {registeration.YourSelf}</p>" +
+                    $"<p>Why you want to volunteer?: {registeration.WhyWantToJoin}</p>" +
+                    $"<p>Thanks & Regards,</p>" +
+                    $"<p>Rural-Reformera</p></body>";
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    Subject = subject,
+                    Body = body
+                })
+                {
+                    message.IsBodyHtml = true;
+                    smtp.Send(message);
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         [Route("rural-reformers/faq")]
@@ -64,33 +106,43 @@ namespace Ruralreformers.Controllers
             return View();
         }
 
+        [Route("rural-reformers/our-team")]
+        [HttpGet]
+        public IActionResult OurTeam()
+        {
+            return View();
+        }
+
         [Route("rural-reformers/contact-us")]
         [HttpPost]
         public IActionResult ContactUs(ContactUs contactUs)
         {
-            //var fromAddress = new MailAddress(contactUs.FromEmail, contactUs.FromEmail);
-            //var toAddress = new MailAddress(contactUs.ToEmail, "Rural-Reforms");
-            //const string fromPassword = "fromPassword";
-            //const string subject = "Subject";
-            //const string body = "Body";
-
-            //var smtp = new SmtpClient
-            //{
-            //    Host = "smtp.gmail.com",
-            //    Port = 587,
-            //    EnableSsl = true,
-            //    DeliveryMethod = SmtpDeliveryMethod.Network,
-            //    UseDefaultCredentials = false,
-            //    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
-            //};
-            //using (var message = new MailMessage(fromAddress, toAddress)
-            //{
-            //    Subject = subject,
-            //    Body = body
-            //})
-            //{
-            //    smtp.Send(message);
-            //}
+            var fromAddress = new MailAddress("Ruralreformers@gmail.com");
+            var toAddress = new MailAddress("Ruralreformers@gmail.com");
+            const string fromPassword = "Kindness080#";
+            const string subject = "Contact Us";
+            string body = $"<body><h3>Hi Team,</h3></br></br><p>Email: {contactUs.FromEmail}</p>" +
+                $"<p>Message: {contactUs.Message}</p>" +
+                $"<p>Thanks & Regards,</p>" +
+                $"<p>Mail: {contactUs.FromEmail}</p></body>";
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            };
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                Body = body
+            })
+            {
+                message.IsBodyHtml = true;
+                smtp.Send(message);
+            }
 
             return View();
         }

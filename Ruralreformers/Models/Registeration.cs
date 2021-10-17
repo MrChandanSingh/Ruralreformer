@@ -26,5 +26,11 @@ namespace Ruralreformers.Models
         [Required]
 
         public string Occupation { get; set; }
+
+        [Required]
+        public string YourSelf { get; set; }
+
+        [Required]
+        public string WhyWantToJoin { get; set; }
     }
 }

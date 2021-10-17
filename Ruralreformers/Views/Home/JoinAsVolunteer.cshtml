@@ -7,7 +7,7 @@
 <div class="container">
     <h1>JoinAsVolunteer</h1>
 
-    <h4>Registeration</h4>
+    <h4>Send us your information. Our team will contact you.</h4>
     <hr />
     @if(ViewBag.SuccessMessage!=null && await ViewBag.SuccessMessage)
             {
@@ -42,7 +42,17 @@
                 <span asp-validation-for="Occupation" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="YourSelf" class="control-label">Tell me about yourself</label>
+                <textarea asp-for="YourSelf" class="form-control"></textarea>
+                <span asp-validation-for="YourSelf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WhyWantToJoin" class="control-label">Why you want to volunteer?</label>
+                <textarea asp-for="WhyWantToJoin" class="form-control"></textarea>
+                <span asp-validation-for="WhyWantToJoin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Send" class="btn btn-primary" />
                 <a class="btn btn-primary" asp-action="rural-reformer">Cancel</a>
             </div>
         </form>
