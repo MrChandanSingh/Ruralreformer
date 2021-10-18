@@ -5,13 +5,13 @@
 }
 
 <div class="container">
-    <h1>JoinAsVolunteer</h1>
+    <h3>Join as volunteer</h3>
 
-    <h4>Send us your information. Our team will contact you.</h4>
+    <h4>Send us your information and query. Our team will contact you.</h4>
     <hr />
-    @if(ViewBag.SuccessMessage!=null && await ViewBag.SuccessMessage)
+    @if(ViewBag.SuccessMessage!=null && ViewBag.SuccessMessage)
             {
-                <p style="color:green;">Information saved successfully.</p>
+                <p style="color:green;">Information sent successfully.</p>
             }
     <div class="col-md-12">
         <form asp-action="JoinAsVolunteer">
