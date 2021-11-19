@@ -4,15 +4,15 @@
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <div>
     <div class="container">
-        <video autoplay muted playsinline style="width:97%;max-height:400px;" loop="loop" id="vid">
-            <source src="~/Images/ruralInfraInfo.mp4" type="video/mp4" />
-        </video>
+        <iframe width="1100" height="400" src="https://www.youtube.com/embed/J2bn0uBTVbA" title="YouTube video player"
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <br />
-        <svg style="margin-left:15%;" id="unmuteToggle" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-volume-mute-fill" viewBox="0 0 16 16">
-            <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zm7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0z" />
-        </svg>
     </div>
 
     <div class="container">
@@ -64,9 +64,52 @@
     </div>
 
     <div class="container">
+        <h3>Our Team</h3>
+        <div class="row">
+            <div class="col-sm-3">
+                <a href="http://www.linkedin.com/in/Parthadasin" target="_blank">
+                    <img src="~/Images/parth.jpeg" style="width:200px;height:200px;" />
+                    <p>Partha Das</p>
+                </a>
+            </div>
+            <div class="col-sm-3">
+                <a href="https://www.linkedin.com/in/chetaan-narayan-tendulkaar-9471a938" target="_blank">
+                    <img style="width:200px;height: 200px;" src="~/Images/chetaan.jpeg" />
+                    <p>Chetaan Narayan Tendulkaar</p>
+                </a>
+            </div>
+            <div class="col-sm-3 offset-0">
+                <a href="http://www.linkedin.com/in/priyanka-singh-21444656" target="_blank">
+                    <img style="width:200px;height: 200px;" src="~/Images/priyankasingh.jpeg" />
+                    <p>Priyanka Singh</p>
+                </a>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="https://www.linkedin.com/in/amritha-shenoy-19801513" target="_blank">
+                    <img style="width:200px;height: 200px;" src="~/Images/Amritha.jpeg" />
+                    <p>Amritha shenoy</p>
+                </a>
+            </div>
+            <div class="col-sm-3 offset-0">
+                <a href="https://www.linkedin.com/in/priyanka-kumari-438561a6" target="_blank">
+                    <img style="width:200px;height: 200px;" src="~/Images/priyankaKumari.jpeg" />
+                    <p>Priyanka Kumari</p>
+                </a>
+            </div>
+            <div class="col-sm-3 offset-0">
+                <a href="https://www.linkedin.com/in/karthick-kumar-16060116/" target="_blank">
+                    <img style="width:200px;height: 200px;" src="~/Images/kharthik.jpeg" />
+                    <p>Karthick Kumar</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item">
                     <img class="d-block w-100" src="~/Images/image1.jpeg" alt="First slide">
                 </div>
                 <div class="carousel-item">
@@ -78,25 +121,41 @@
             </div>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <h3>Our Team</h3>
-    <div class="row">
-        <div class="col-sm-3">
-            <a href="https://www.linkedin.com/in/chetaan-narayan-tendulkaar-9471a938" target="_blank">
-                <img style="width:200px;height: 200px;" src="~/Images/chetaan.jpeg" />
-                <p>Chetaan Narayan Tendulkaar</p>
+    <div class="container">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="~/Images/image1.jpeg" alt="Los Angeles" width="1100" height="500">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Images/image2.jpeg" alt="Chicago" width="1100" height="500">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Images/image3.jpeg" alt="New York" width="1100" height="500">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
             </a>
-        </div>
-        <div class="col-sm-3 offset-0">
-            <a href="http://www.linkedin.com/in/priyanka-singh-21444656" target="_blank">
-                <img style="width:200px;height: 200px;" src="~/Images/priyankasingh.jpeg" />
-                <p>Priyanka Singh</p>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
             </a>
         </div>
     </div>
 </div>
+
 <script>
     $(document).ready(function () {
         var video = document.getElementById('vid');
@@ -105,4 +164,11 @@
         });
     })
 </script>
+
+<style>
+    .carousel-inner img {
+        width: 100%;
+        height: 100%;
+    }
+</style>
 
