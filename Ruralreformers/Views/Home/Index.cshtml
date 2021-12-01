@@ -9,13 +9,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <div>
-    <div class="container">
-        <p><strong>Rural Reformers</strong></p>
+     <div class="home-page-welcome">
+         <div class="blurbackground">
+        <div class="container">
+            <h3><strong>Rural Reformers</strong></h3>
         <p>
             Rural Reformers are a group of like-minded volunteers who envision inclusive education for every child in India. We want to change Rural India for the better. We are taking small steps for making that big change.
             To drive this cause, Rural Reformers are working with verified NGOs. We assist them with volunteering, fundraising, guidance on project implementation & progress monitoring for these associated projects.
             As a start, we are focusing on Rural Karnataka to help children with disabilities to be a part of the main stream education and have equal employment opportunities.
         </p>
+        </div>
+         </div>
+      </div>
+    <div class="container">
         <p><strong>Our Vision</strong></p>
         <p>Education for every Child in India</p>
         <p><strong>Our Mision</strong></p>
@@ -86,6 +92,19 @@
     .carousel-inner img {
         width: 100%;
         height: 100%;
+    }
+
+    .home-page-welcome {
+        position: relative;
+        background: url(images/image1.jpeg) no-repeat center;
+        background-size: cover;
+        z-index: 99;
+    }
+    .blurbackground {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(60px);
+        padding: 10px;
+        font-size: 18px;
     }
 </style>
 

@@ -113,6 +113,13 @@ namespace Ruralreformers.Controllers
             return View();
         }
 
+        [Route("rural-reformers/our-project")]
+        [HttpGet]
+        public IActionResult Project()
+        {
+            return View();
+        }
+
         [Route("rural-reformers/contact-us")]
         [HttpPost]
         public IActionResult ContactUs(ContactUs contactUs)
