@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="app">
-        <header style="position: inherit">
+        <header style="position: inherit; font-family:Segoe UI !important;">
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style=" background-color: #1e90ff !important; margin-bottom: 0px !important; ">
                 <div class="container">
                     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
@@ -33,7 +33,7 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="rural-reformers" asp-action="contact-us">Contact Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="rural-reformers" asp-action="faq">FAQ</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="rural-reformers" asp-action="faq">Faq</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="rural-reformers" asp-action="our-team">Our Team</a>
@@ -67,9 +67,20 @@
 </body>
 </html>
 <style>
+
+    .donate-header {
+        background: url('images/image1.jpeg') no-repeat center;
+        position: relative;
+        z-index: 99;
+        padding-top: 100px;
+        padding-bottom: 72px;
+        background-size: cover !important;
+    }
+
     body {
         margin: 0;
         padding: 0;
+        font-family:Segoe UI !important;
     }
     .header-text-color a {
         color: #f8f9fa !important;
